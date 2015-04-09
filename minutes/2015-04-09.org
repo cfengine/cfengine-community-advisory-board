@@ -1,0 +1,42 @@
+* April 9, 2015
+
+** Attendees
+
+- [X] Nick Anderson
+- [X] Eysein Stenberg
+- [X] Ted Zlatanov
+- [X] Mike Svoboda
+- [X] Jonathan Clarke
+- [ ] Martin Simmons
+  - technical problems joining
+  - Sent chat log
+  - No major issues with charter
+- [X] Marco Marongiu
+- [X] Neil Watson
+- [X] Bas van der Vlies
+- [X] Thomas Ryd
+
+
+https://github.com/nickanderson/cfengine-community-advisory-board
+
+** Discussion about the charter
+- Noted that the board members have no acting power
+- Concerns that board suggestions could go to proprietary Enterprise rather than community.
+- Overall support to try the board
+- Concerns about term limits
+- Concerns about member inactivity and ability to replace
+- Chartner needs to specify no hydras (multiple people from same org)
+- Agreed to vote out of band, form to be sent
+- Voteing Form: https://docs.google.com/forms/d/1XhdQRGv09-_w8COFoOAw5lhXEtpUkHjC9BjWpcK0dIg/viewform?usp=send_form
+  - "Eystein Måløy Stenberg"
+  - "Nick Anderson"
+  - "Marco Marongiu"
+  - "Neil H Watson"
+  - "Martin Simons"
+  - "Bas Van Der Vlies"
+  - "Mike Svoboda"
+  - "Jonathan Clarke"
+  - "Ted cfengine Zlatanov"
+
+** Future Topics
+- Branding (Mike Svoboda, Jonathan Clarke)
