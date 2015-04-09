@@ -91,6 +91,8 @@ to support the cfengine ecosystem, over the previous 6 months. These seats will
 be reserved for active individual contributors who are not employees of
 CFEngine, Inc.
 
+Of the 5 seats no two members shall be from the same organization.
+
 ## Operation
 
 The CFEngine Community Advisory Board is authorized to seek advice and counsel
