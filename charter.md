@@ -138,6 +138,4 @@ conjunction with the following open governance principles:
     * Open Licensing: code is licensed under the GPL version 3.
 
 Please help us improve this draft by sending your comments and feedback to
-community-advisory-board@cfengine.com.
-
-The source for this document can be found in this repository.
+communityadvisoryboard@cfengine.com.
