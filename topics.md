@@ -1,5 +1,8 @@
 # Potential Topics
 
+## Naming/Branding
+Mike:
+
 ## CFEngine Champion Selection
 Nick: I think it would be nice if the community were more involved in Champion
 Selection, even taking over the responsibility.
