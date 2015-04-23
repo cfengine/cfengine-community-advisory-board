@@ -1,0 +1,80 @@
+* April 23, 2015
+:LOGBOOK:
+CLOCK: [2015-04-23 Thu 09:00]--[2015-04-23 Thu 10:05] =>  1:05
+:END:
+
+** Attendees
+
+- [X] Nick Anderson
+- [X] Eysein Stenberg
+- [X] Ted Zlatanov
+- [X] Mike Svoboda
+- [X] Neil Watson
+- [X] Bas van der Vlies
+- [ ] Jonathan Clarke
+
+
+https://github.com/nickanderson/cfengine-community-advisory-board
+
+
+** Roadmap
+*** Client side digest comparison
+Idea liked by all in the meeting.
+
+Neil, Mike and Bas all using similar implemtations with success.
+
+Furture specefication should continue in [[https://dev.cfengine.com/issues/7132][Redmine #7132]]
+
+- Reduce server load for serving policy
+  - Clients request a single file first (similar to cf_promises_validated)
+    - Clients then locally hash each file in the map and then download
+      only the files that are in the map that do not match the hash
+    - This is an improvment over cf_promises_validated because if
+      cf_promises_validated is updated *all* files are hashed on the
+      server, and on the client when the client performs a scan
+      trying to update its policy.
+  - This could also reduce other issues caused when the server is
+    busy, timeouts, failed transfers etc ... as the server would be
+    less busy overall. Generally very few files change at any given
+    time.
+- Server generates sum map every 5 minutes, and the clients use the
+  map to know which files to update instead of querying the server
+  for each file.
+- librsync was proposed as an alternative
+  - There was consensus that librsync may be a good addtion, but
+    does not address this specific need, as librsync would still
+    hash all files that are requested.
+- LinkedIn reduced CPU load on the policy server by 99% by
+  incorperating this methodology
+- https://groups.google.com/d/msg/help-cfengine/cdUoRye9IEM/3WNOLa-KFh8J   
+- https://groups.google.com/d/msg/help-cfengine/PwmIgTFmdXw/17W09lNBNxEJ
+- https://groups.google.com/d/msg/help-cfengine/c4yEMNQYpRM/K4MHqlX5N1cJ
+- cf-serverd could hold the map in memory
+  - Agents could get this map and hold it in memory
+- Potential functions to support this from native policy currently
+  - https://docs.cfengine.com/latest/reference-functions-hashmatch.html
+    - Checks if the hash of a filename matches a given hash, could
+      be used in derermining if a file needs to be updated
+  - https://docs.cfengine.com/latest/reference-functions-hash.html
+    - Compute the hash of a string
+    - Can only be used on strings, not files, would be limited to 4K
+    - Need different function to just generate the hash for a given file
+
+*** Pluggability
+- Hooks to be able to dig into what cfengine did (things stored in lmdb)
+- Promise Plugins, general ability to leverage known programming
+  languages and tools more easily within cfengine would make it
+  easier/more familiar to use
+
+*** Branding
+- CFEngine does not have very much of a presense at conferences etc ...
+  - Small team, limited capacity
+  - How can we get the community to speak up more?
+    - Perhaps offer support to send others
+  - Suggest send someone to toastmasters, and put someone on the speaking circuit
+- Branding change would probably take better if it came with a major new feature
+  - Conversation turned toward featrues again. Pluggability and promise plugins
+
+  
+** Future Topics
+- Prioritized bugs for 3.6.6
