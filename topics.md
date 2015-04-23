@@ -1,7 +1,6 @@
 # Potential Topics
 
-## Naming/Branding
-Mike:
+## Priority Bug list for 3.6.6
 
 ## CFEngine Champion Selection
 Nick: I think it would be nice if the community were more involved in Champion
