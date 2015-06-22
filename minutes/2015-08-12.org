@@ -1,0 +1,16 @@
+* August 12th, 2015
+
+** Attendees
+
+- [ ] Nick Anderson
+- [ ] Eysein Stenberg
+- [ ] Ted Zlatanov
+- [ ] Mike Svoboda
+- [ ] Neil Watson
+- [ ] Bas van der Vlies
+- [ ] Jonathan Clarke
+
+https://github.com/cfengine/cfengine-community-advisory-board
+
+
+
