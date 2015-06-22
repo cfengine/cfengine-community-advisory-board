@@ -35,3 +35,4 @@ Nick:
   What things do you think are important for 3.8? What can the community start
   working on? What do you need help from CFEngine with in order to enable you?
 
+  - Move to standard json parser (https://dev.cfengine.com/issues/6607)
