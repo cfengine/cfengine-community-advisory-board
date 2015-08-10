@@ -1,12 +1,17 @@
-# Potential Topics
+# Topics
 
 ## Branding
   - What benefits are there to re-branding?
   - What would the downsides be
+  - How do you think others in the community would percieve this?
 
-## Feedback on current release
+## Feedback on 3.6.6
 
-## Prioritzed Bug list
+## Feedback on 3.7.0
+
+## Feedback on 3.8 plans
+  - http://cfengine.com/company/blog-detail/release-theme-for-cfengine-3-8-performance/
+
 
 ## CFEngine Champion Selection
 Nick:
@@ -27,12 +32,4 @@ Nick:
   policy for. I have been linking to them from here
   https://github.com/cfengine-content/registry
 
-## 3.8 Planning
-Nick:
-
-  What will CFEngine focus on?
-
-  What things do you think are important for 3.8? What can the community start
-  working on? What do you need help from CFEngine with in order to enable you?
-
-  - Move to standard json parser (https://dev.cfengine.com/issues/6607)
+## Prioritzed Bug list
