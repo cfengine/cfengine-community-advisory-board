@@ -1,0 +1,102 @@
+** MEETING Community Advisory board
+   :LOGBOOK:
+   CLOCK: [2015-08-13 Thu 11:13]--[2015-08-13 Thu 12:30] =>  1:17
+   :END:
+[2015-08-13 Thu 11:12]
+
+*** Attendees
+
+   - [X] Eysein Stenberg
+   - [X] Ted Zlatanov
+   - [X] Mike Svoboda
+   - [X] Neil Watson
+   - [ ] Bas van der Vlies
+   - [X] Jonathan Clarke
+   - [X] Nick Anderson
+
+
+*** New Topic Proposals
+ - What has the CAB accomplished
+ - Policy Testing
+
+*** Discussion
+**** Branding
+  - CFEngine carries much history with it, some
+    of that history like kicking off the whole configuration
+    management concept, knowledge management, promise theory, it's
+    lean footprint, and cross platform capabilities is good. However
+    CFEngine 2 while successful in its own right, has cast a shadow on
+    CFEngine 3. Google searches can turn up very old information and
+    people have memory of some of the difficulties in using
+    CFEngine 2. This can lead to the belief that CFEngine is old
+    technology. On the contrary CFEngine has continued to evolve and a
+    branding change may be beneficial in communicating that.
+    - Several think re-branding should come with a redesign of code or
+      some new behavior like promise and function plugins.
+    - Re-branding should come with new getting started
+      documentation
+    - It is generally supported by the board members in attendance and
+      most think the community would not care
+    - Probably no need to make changes to libraries or binaries
+
+*** Feedback on 3.6.6
+ - Neil not using, moving to 3.7 instead
+ - Mike on 3.6.2, testing 3.7 now, will probably roll 3.7.2
+   - 3.6.2 has been rock solid, one of the best releases yet
+ - Ted said good safe release, no behavior changes observed (other than
+   new functionality)
+ - Mike, and Jonathan say they are really appreciative of
+   stabalisation of code in 3.6, its paid off
+ - Rudder is still on 3.6.5 have not looked at 3.6.6
+
+*** Feedback on 3.7.0
+ - outside of new features ted thinks it works just like 3.6
+ - Neil said the new logging output is good and much easier to read
+ - Ted noted that the timing output is very nice and that we could
+   easily build a profiler to replace cfe-profiler
+   - This could play into the theme for 3.8
+ - Ted and Neil think the def.json facility needs to be moved to C at some
+   level. Many beginners stupmped with evaluation order.
+
+*** Feedback on 3.8
+ - Performance
+  - Everyone thought the focus on performance is good and Neil noted
+    that it would be nice to have a profiler come with it.
+  - Jonathan said that copying lots of small files is really slow and
+    is interested in performance with regard to policy distribution
+
+ - Phased roll out
+  - Mike excited about phased roll out
+    - Everyone hacks their own, would be nice to have this in the core product.
+  - Jonathan concerned about phased roll out. He wants to see useful
+    generic abstract functions that don't require using a bunch of
+    specific policy from masterfiles or somewhere else.
+    - Ted agrees at least some of it should be moved to c and
+      functions
+  - Neil would like to see bootstrap option for the path to the policy
+    - cf-agent --bootstrap HUB --masterfiles /var/cfengine/prod-masterfiles
+  - Mike has automatic roll out implemented
+    - push to master and an automated process merges from master to
+      branch a to b to c etc .. the auto-merger does a merge once
+      every 15 minutes
+
+*** CFEngine Champion Selection
+    - The board members agreed to do the champion selection.
+    - The community members know the most about other community
+      members
+
+*** Content Sharing
+ - We do not have a good way to distribute and consume policy
+ - We have EFL and NCF which are good alternative frameworks, but not
+   designed for people to pick and choose the policy they want.
+ - We will all continue to think about this and elicit feedback from
+   other users
+ - Suggested to ship more examples with the package
+
+*** Off Topic Chatter
+  - Mike says it would be nice if there were something like a daily
+    splayclass, instead of beicoming active once a day, become active
+    and stay active.
+    - neil has a ticket https://dev.cfengine.com/issues/3039
+
+
