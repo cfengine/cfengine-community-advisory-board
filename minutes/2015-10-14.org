@@ -97,7 +97,7 @@
     video/phone. Widely agreed upon. Specifics to be worked out later.
 
     Downsides:
-    - No next conversation to review when making these meeting
+    - No text conversation to review when making these meeting
       minutes.
     - Technology and video issues are common, IRC is lowest common
       denominator.
