@@ -1,22 +1,24 @@
-# Topics
+# Proposed Topics
+
+
+
+# Open Topics (for further discussion)
+
+These are topics that have been discussed, but may have additional discussion
+remaining.
 
 ## Prioritzed Bug list
-### https://dev.cfengine.com/issues/7453#change-41484
+### def.json from C
+    - https://dev.cfengine.com/issues/7453#change-41484
 
 ## Policy testing
-
-## Feedback on 3.8 plans
-  - http://cfengine.com/company/blog-detail/release-theme-for-cfengine-3-8-performance/
+   - Neil?
 
 ## CFEngine Champion Selection
   - Should be selected by EOY
 
-## Content Sharing
-  - What have you heard from other users?
-  - What could we use to share select policies and make them consumable?
-    - Design Center
-    - augments_file
-    - autorun
+## CFEngine and Network devices
+  - Mike?
 
-## Accomplishments
-
+## Policy hash map (for improved update behavior)
+  - Mike/Neil?

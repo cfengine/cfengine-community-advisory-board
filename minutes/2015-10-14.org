@@ -1,16 +1,167 @@
-* August 12th, 2015
+* October 14th, 2015
 
 ** Attendees
 
-- [ ] Nick Anderson
-- [ ] Eysein Stenberg
-- [ ] Ted Zlatanov
-- [ ] Mike Svoboda
-- [ ] Neil Watson
-- [ ] Bas van der Vlies
+- [X] Nick Anderson
+- [X] Eystein Stenberg
+- [X] Ted Zlatanov
+- [X] Mike Svoboda
+- [X] Neil Watson
+- [X] Bas van der Vlies
 - [ ] Jonathan Clarke
 
-https://github.com/cfengine/cfengine-community-advisory-board
+** Discussion
+
+*** Accomplishments
+    Neil had asked what the community advisory board has accomplished.
+
+    The primary accomplishment of the board has been sustained open
+    communication between the community leaders and the company. Some
+    specific areas where this can be seen:
+    - 3.8 development priorities shared in advance
+    - Releases happen in public channels
+    - Specifications being done in the open
+      - [[https://dev.cfengine.com/issues/7416][Alternative file/data transfer protocol]]
+      - [[https://dev.cfengine.com/issues/7132][Policy digest map]] (Result of board meeting)
+      - [[https://dev.cfengine.com/issues/7469][Phased Roll Out]]
+      - [[https://dev.cfengine.com/issues/6404][Renewed package promise implementation]]
+      - [[https://dev.cfengine.com/issues/7615][def.json/augments file from C]] (discussed at length during this
+        board meeting)
 
 
+*** Important Issues
+**** [[https://dev.cfengine.com/issues/7615][def.json/augments file from C]]
 
+     Familiarity with proposal:
+     - Mike somewhat unfamiliar.
+     - Bas, and Neil, Nick, and of course Ted think its a good approach
+
+     Discussion:
+     - Ted
+       - Allows external services to configure cfenigne without
+         editing cfengine files
+     - Eystein has concerns
+       - Thinks we need a more generic solution
+       - Issues with variales/classes not parsed early enough has been
+         a cluser of problems in the past, for inventory, design
+         center now this.
+       - common for people to read stuff from an external file and use
+         that in policy
+         - definition of role (db, web, etc ... ), firewall rules, etc
+         - This is essential the same problem
+         - This extra parsing for solving one very specific bug yeilds
+           extra complexity to an already complex parsing process
+       - Offered Alternative approach
+         - Rely on modules to parse early data
+         - instead of having ad-hoc way to parse def.json and perhaps
+           others, rely on the module protocol that way it can easily
+           be extended to anything
+         - drawback is executables would be running as part of parsing
+         - Ted
+           - Executables add uncertainty and fragility to the startup
+             behavior
+           - This is the facter/ohai route, which seems to work well
+             for puppet and chef
+           - Neil: We should draw on what works with other
+             products. Sometimes feel we are stuck in a bubble.
+           - We could have def.json key modules, that lists the
+             modules that should be run
+             - Neil: Good idea
+             - Eystein: Circular dependancy
+               - How is it circular? def.json lists moduels, which get run
+               - Eystein: parse def.json to read modules, and if module reads def.json it seems circular
+             - Then we don't have the problem with evaluation
+         - Bas
+           - Dependant on the language its written in, how are modules
+             being called, must ewe edit the config files to activate
+             them?
+           - Eystein
+             - For def.json module it could be made very portable,
+               perhaps a c program built like the cf-agent
+             - Additional modules are up to the user
+     - Additional alternatives and hybrid approaches
+       - Def.json from C with modules key to configure the modules (as
+         described by eystein) that should run very early
+       - def_json module that reads def.json and then kicks off other
+         modules as needed
+
+     The summary of the options has been updated in the
+     ticket. See [[https://dev.cfengine.com/issues/7615][Redmine #7615]] for more details.
+
+**** Moving language concepts guide to reference section of documentation
+     Aleksey suggested the move, it makes sense to everyone.
+     - Nick to do the work
+
+*** Meeting should move to video conference or phone call
+    Mike suggested that the meeting may go faster if moved to
+    video/phone. Widely agreed upon. Specifics to be worked out later.
+
+    Downsides:
+    - No next conversation to review when making these meeting
+      minutes.
+    - Technology and video issues are common, IRC is lowest common
+      denominator.
+
+*** Policy Testing
+    Raised by Neil.
+
+    Would like to promote ways to test cfengine policy and ways to
+    prove your policy works.
+
+    - Ted
+      - Writes tests using the core test framework
+      - Uses a [[https://github.com/bahamat/docker-cfengine-policy-hub][docker hub]] and leverages filesystem diff reports from
+        docker tools
+    - Nick
+      - Writes tests using core test framework
+      - Uses [[https://docs.cfengine.com/latest/guide-installation-and-configuration-general-installation-installation-enterprise-vagrant.html][CFEngine Enterprise Vagrant Environment]]
+    - Neil
+      - Interested in marriage between [[http://serverspec.org/][serverspec]] and [[https://testanything.org/][TAP]]
+    - Mike
+      - A testing promise type might be interesting
+        - Ted
+          - Could be done with promise plugins
+
+    While its an important topic, no actions were identified except to
+    continue to try and raise awareness by promoting various peoples
+    work.
+
+    To that end here are some relevant links.
+      - http://syslog.me/2014/08/30/test-dummies-on-sale/
+      - http://evolvethinking.com/testing-cfengine-policy-by-counting-classes/
+      - http://evolvethinking.com/testing-cfengine-policy/
+      - http://evolvethinking.com/cfengine-best-practices-testing/
+      - http://evolvethinking.com/testing-cfengine-using-efl-tap-and-perl/
+
+*** Goals that can be accomplished without CFEngine the company
+    Raised by Neil.  The board should focus on goals that can be
+    achieved without having to rely on the company as goals and
+    priorities frequently differ.
+
+    Neil would like for the board to take on projects that can be
+    accomplished. The only current project Identified is selecting the
+    next batch of CFEngine Community Champions.
+
+*** Champion Selection
+    - One candidate identified by board
+    - Pool of candidates identified by board
+    - [ ] Nick to send out community form for wider input
+
+    Should champions be for life, or yearly? Up till now it has been
+    for life. No large motivation to change from that. The Champions
+    tend to remain active community members.
+
+    - Current champion page lists past champions, suggested to change to single page
+      - [ ] Nick to do the work
+
+*** Networking Industry moving towards full blown linux distros for switching and routing
+    Raised by Mike
+
+    - Lack of packages for switching and routing platforms hampers
+      adoption of CFEngine in this space.
+    - Lack of real revenue opportunities limit CFEngine the company
+      from investing heavily.
+      - CFEngine has previously done work with Arista and Cumulus
+        Networks
+    - Chicken and egg problem
+    - IPV6 is important
