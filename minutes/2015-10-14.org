@@ -132,6 +132,7 @@
       - http://evolvethinking.com/testing-cfengine-policy/
       - http://evolvethinking.com/cfengine-best-practices-testing/
       - http://evolvethinking.com/testing-cfengine-using-efl-tap-and-perl/
+      - https://github.com/nmische/kitchen-cfengine/
 
 *** Goals that can be accomplished without CFEngine the company
     Raised by Neil.  The board should focus on goals that can be
