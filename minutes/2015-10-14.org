@@ -91,9 +91,11 @@
 **** Moving language concepts guide to reference section of documentation
      Aleksey suggested the move, it makes sense to everyone.
      - Nick to do the work
-       - [X] [[https://github.com/cfengine/documentation/pull/1189][Moved in master]] 2015-10-19
-       - [X] Redirect [[https://docs.cfengine.com/docs/master/guide-language-concepts.html][docs/master/guide-language-concepts]] to [[https://docs.cfengine.com/docs/master/reference-language-concepts.html][docs/master/reference-language-concepts]] 2015-10-20
-       - [ ] When 3.8 is released redirect latest/guide-language-concepts to latest/reference-language-concepts
+     
+***** TODO Move language concepts guide to reference section of documentation [2/3]
+      - [X] [[https://github.com/cfengine/documentation/pull/1189][Moved in master]] 2015-10-19
+      - [X] Redirect [[https://docs.cfengine.com/docs/master/guide-language-concepts.html][docs/master/guide-language-concepts]] to [[https://docs.cfengine.com/docs/master/reference-language-concepts.html][docs/master/reference-language-concepts]] 2015-10-20
+      - [ ] When 3.8 is released redirect latest/guide-language-concepts to latest/reference-language-concepts
 
 *** Meeting should move to video conference or phone call
     Mike suggested that the meeting may go faster if moved to
@@ -149,15 +151,19 @@
 *** Champion Selection
     - One candidate identified by board
     - Pool of candidates identified by board
-    - [ ] Nick to send out community form for wider input
+    - Nick to send out community form for wider input
 
     Should champions be for life, or yearly? Up till now it has been
     for life. No large motivation to change from that. The Champions
     tend to remain active community members.
 
     - Current champion page lists past champions, suggested to change to single page
-      - [ ] Nick to do the work
-
+      - Nick to do the work
+      
+**** TODO Champion Selection [0/2]
+     - [ ] Nick to see about consolidating past champions pages into one
+     - [ ] Nick to send out nomination forms for 2015 CFEngine Community Champions
+     
 *** Networking Industry moving towards full blown linux distros for switching and routing
     Raised by Mike
 
