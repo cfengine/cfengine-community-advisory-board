@@ -160,9 +160,9 @@
     - Current champion page lists past champions, suggested to change to single page
       - Nick to do the work
       
-**** TODO Champion Selection [0/2]
-     - [ ] Nick to see about consolidating past champions pages into one
-     - [ ] Nick to send out nomination forms for 2015 CFEngine Community Champions
+**** TODO Champion Selection [2/2]
+     - [X] Nick to see about resurrecting champion info for previous [[champions][https://cfengine.com/engage/cfengine-champions/]]
+     - [X] Nick to send out nomination forms for [[https://goo.gl/gpdWbA][2015 CFEngine Community Champion Nomination]]
      
 *** Networking Industry moving towards full blown linux distros for switching and routing
     Raised by Mike
