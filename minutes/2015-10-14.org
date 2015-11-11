@@ -92,7 +92,7 @@
      Aleksey suggested the move, it makes sense to everyone.
      - Nick to do the work
      
-***** TODO Move language concepts guide to reference section of documentation [2/3]
+***** TODO Move language concepts guide to reference section of documentation [3/3]
       - [X] [[https://github.com/cfengine/documentation/pull/1189][Moved in master]] 2015-10-19
       - [X] Redirect [[https://docs.cfengine.com/docs/master/guide-language-concepts.html][docs/master/guide-language-concepts]] to [[https://docs.cfengine.com/docs/master/reference-language-concepts.html][docs/master/reference-language-concepts]] 2015-10-20
       - [X] When 3.8 is released redirect latest/guide-language-concepts to latest/reference-language-concepts
