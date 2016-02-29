@@ -1,0 +1,6 @@
+CFEngine Community Advisory Board
+
+Learn more about the [[charter.md#background][background]], [[charter.md#purpose][purpose]], [[charter.md#scope][scope]] and [[charter.md#meetings-and-memberships][meetings and
+membership]] from the [[charter.md][charter]].
+
+Review [[minutes/][meeting minutes]].
