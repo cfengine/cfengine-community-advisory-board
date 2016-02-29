@@ -4,3 +4,6 @@ Learn more about the [[charter.md#background][background]], [[charter.md#purpose
 membership]] from the [[charter.md][charter]].
 
 Review [[minutes/][meeting minutes]].
+
+Have a topic you want discussed? Please [[topics.md#proposed-topics][propose a topic]] with a pull
+request or [[mailto:communityadvisoryboard@cfengine.com][email the board]] your suggestion.
