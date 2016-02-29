@@ -1,0 +1,116 @@
+* February 25th, 2016
+
+** Attendees
+
+- [X] Nick Anderson
+- [X] Eystein Stenberg
+- [X] Ted Zlatanov
+- [X] Mike Svoboda
+- [X] Neil Watson
+- [X] Bas van der Vlies
+- [X] Jonathan Clarke
+
+** Discussion
+
+***  Backporting if macros
+
+We discussed the merits of backporting [[https://github.com/cfengine/documentation/blob/b7c31640e7062cad5baf59fae65050e3799fad61/reference/macros.markdown][macros]] to =3.6=.
+
+The macros allow significantly easier maintenance of policy that is
+run on mixed versions. Many people are still running older versions in
+production.
+
+Bas and Jonathan strongly support an exception to allow this feature
+to be brought into the =3.6.x= series as the patch is quite small (7
+lines?). Mike supports backporting if it is well communicated and
+provided in a separate package, for example
+=cfengine-community-withmacros-3.6.6.rpm=. Ted slightly leans toward
+allowing an exception.
+
+Nick and Neil are against bringing features into the stable release.
+
+*** def.json from C
+
+=def.json= was first introduced in =3.7.0= as a way to help simplify
+policy framework upgrades by reducing the need to modify the default
+policy. The feature was well received by several users however due to
+the lateness at which it was parsed it was unusable in many
+cases. Because =3.7= is an LTS release and because of the very limited
+usefulness due to late parsing, and the wide support for the feature
+by the community advisory board members the developers are consider
+the move to pre-parsing =def.json= from C a *bug fix*, and it is
+eligible for backporting into =3.7.x= after we have more positive
+feedback on its functioning in =3.8.1+=.
+
+We discussed how the new =def.json= pre-parsing from C is working
+after its release in =3.8.1=. Ted has been using the feature without
+issue.
+
+No one else on the board has used the functionality yet.
+
+While helping a community user in =#cfengine= on irc.freenode.net Bas
+found an [[https://dev.cfengine.com/issues/7954][issue with failsafe]]. Specifically if =def.json= includes the
+standard library it will result in duplicate definition errors. Bas
+opened [[https://github.com/cfengine/core/pull/2500][pull request 2500]]. To address =failsafe.cf=. But =update.cf=
+needs to be reviewed for potential duplicate bundles as well.
+
+Jonathan is against backporting this to C in =3.7.x= because its a
+change in behavior to the C code and there is a risk to release
+stability.
+
+*** Releases
+
+We discussed the release time-lines. Jonathan noted that the time
+based releases seem to be working well. The predictability of releases
+as well as their stability has improved.
+
+For the 3.8 release there was little to no advance warning that the
+window to merge pull requests was closing. This resulted in a lot of
+frustration for contributors hoping to get their changes into the next
+release. Nick noted that the [[https://cfengine.com/company/blog-detail/release-theme-for-cfengine-3-9-logging/][3.9 release announcement]] includes a note
+that pull requests should be reviewed and adjustments made by early
+April in order to make the release.
+
+pull requests should be reviewed and adjustements made by
+                      early april in order to make the release
+
+Neil and Jonathan and Bas noted they would like to see more frequent
+patch releases. The primary benefit of these more frequent patch
+releases would be for new users. Eystein noted that 6-12 months is
+quite typical for enterprise upgrades and doing much more frequent
+patch releases has diminishing returns but also noted that the patch
+release schedule is flexible for *serious regressions* or *security
+issues*.
+
+Bas noted that he uses [[http://builds.cfengine.com/pub/nightly][nightly builds]] to test bug fixes.
+
+Summary: It would be nice if reminders about upcoming freezes to the
+code base were sent out
+
+*** Hash collisions
+
+We discussed [[http://dev.cfengine.com/issues/7912][Redmine #7912]] which details how classes can be seen to be
+defined when in fact they are not.
+
+A [[https://github.com/cfengine/core/pull/2489][patch to implement murmur3 hashing]] has been proposed.
+
+Board members are curious for an ETA and noted that there has been no
+update to the issue in some time. Noted that [[https://github.com/cfengine/core/pull/2331][other pull requests]] also
+go for extended periods of time without an update.
+
+This is one of the most important issues that is currently open. We
+are working on it, but do not yet have an ETA.
+
+*Update:* Jimis has [[http://dev.cfengine.com/issues/7912#note-25][proposed a fix]] that replaces the Red Black tree
+with a hash table and is soliciting feedback. He closed the proposal
+to switch to murmur3 noting that it could be a separate improvement.
+
+*** Other
+- [[https://www.linkedin.com/in/martingehrke][Martin Gehrke]] will be speaking at [[http://lopsaeast.org/2016/][LOPSA East]] on
+  <2016-05-07 Sat>-<2016-05-08 Sun>.
+- Would be nice to have a reminder email sent ~ 1 week before each
+  advisory board meeting asking for extra topics and giving people a
+  chance to review currently open topics.
+- Ted Zlatanov suggested a weekly review of outstanding PRs in
+  =#cfengine-dev= on irc.freenode.net.
+  - Bas, Jonathan and Ted agreed to self initiate this.

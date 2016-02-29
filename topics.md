@@ -1,21 +1,34 @@
 # Proposed Topics
 
+Please enter new topic proposals here.
 
 
 # Open Topics (for further discussion)
 
-These are topics that have been discussed, but may have additional discussion
-remaining.
+These are topics that have been discussed, but may have additional
+discussion remaining.
 
-## Prioritzed Bug list
-### def.json from C
-    - https://dev.cfengine.com/issues/7453#change-41484
+- Backport if macros 3.6.x
+  - For
+    - Jonathan
+    - Bas
+    - Mike (with caviats)
+    - Ted (slightly)
+  - Against
+    - Neil
+    - Nick
+
+## def.json Pre Parsing
+  - https://dev.cfengine.com/issues/7615
+  - Merged in =3.8.1=, considered a **bug fix**.
+  - Jonathan against backporting to =3.7.x=
+  - Bas identified an [issue](https://dev.cfengine.com/issues/7954)
+    when including stdlib in =def.json=
+    - [Pull Request](https://github.com/cfengine/core/pull/2500)
+
 
 ## Policy testing
    - Neil?
-
-## CFEngine Champion Selection
-  - Should be selected by EOY
 
 ## CFEngine and Network devices
   - Mike?
