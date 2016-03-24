@@ -2,6 +2,10 @@
 
 Please enter new topic proposals here.
 
+## Looking at other community initiatives
+Raised by Florian Hagel
+- https://wiki.onosproject.org/display/ONOSST/Community+Steering+Team
+- Thinks that we need some public goals for interaction with community
 
 # Open Topics (for further discussion)
 
