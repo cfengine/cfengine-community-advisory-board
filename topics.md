@@ -3,9 +3,24 @@
 Please enter new topic proposals here.
 
 ## Looking at other community initiatives
+
 Raised by Florian Hagel
 - https://wiki.onosproject.org/display/ONOSST/Community+Steering+Team
 - Thinks that we need some public goals for interaction with community
+
+## Explicit iteration proposal
+
+Raised by Ted
+
+- https://groups.google.com/forum/#!topic/help-cfengine/cdaIS-YWV7A
+
+## Closures and functions to revamp map functions
+
+Raised by Ted
+
+Typically you'd deal with this with a closure, e.g. map(canonify(key()), mylist)
+where `key()` gives you the key of the current iteration without a variable
+interpolation
 
 # Open Topics (for further discussion)
 
