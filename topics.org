@@ -1,0 +1,106 @@
+* Proposed Topics
+:PROPERTIES:
+:ID:       ebfb4087-2b7a-4278-89b9-7fbe98e5ea22
+:END:
+
+Please enter new topic proposals here.
+
+** Documentation Cleanups
+:PROPERTIES:
+:ID:       ef3d8ed7-fa5c-4464-bc0d-1682288d6c3d
+:END:
+Proposed by: Nick
+
+I have recently resurrected some of the special topics guides. I would
+appreciate anyone else looking into the details of them and modernizing examples
+or any outdated information.
+
+** Looking at other community initiatives
+:PROPERTIES:
+:ID:       afcbbbb7-a1f6-4df7-af2e-4ec677bd7fd2
+:END:
+
+Raised by Florian Hagel
+- https://wiki.onosproject.org/display/ONOSST/Community+Steering+Team
+- Thinks that we need some public goals for interaction with community
+
+** Closures and functions to revamp map functions
+:PROPERTIES:
+:ID:       5b9100b0-47ce-49ab-ac55-1cd5d68f58c7
+:END:
+
+Raised by Ted
+
+Typically you'd deal with this with a closure, e.g. map(canonify(key()), mylist)
+where `key()` gives you the key of the current iteration without a variable
+interpolation
+
+* Open Topics (for further discussion)
+:PROPERTIES:
+:ID:       b37f5fd3-6da4-43d3-bb53-4fa9f8977b38
+:END:
+
+These are topics that have been discussed, but may have additional
+discussion remaining.
+
+** [[jira:CFE-2378]] Explicit iteration proposal
+:PROPERTIES:
+:ID:       654de071-a42f-4872-b6b1-54b06d49cd91
+:END:
+Proposed by: Ted
+
+- https://groups.google.com/forum/#!topic/help-cfengine/cdaIS-YWV7A
+
+** [[jira:CFE-2084]] Multiple Augments
+:PROPERTIES:
+:ID:       2b06e92d-7bee-462f-a432-5e2688111cd3
+:END:
+
+Be able to specify multiple augments files, and have them merged together into
+the =def= scope with the last files winning.
+
+- Should be able to use =sys= vars
+- Should be able to specify the file merging order
+- Should be able to specify the merge tragedy
+
+Support:
+- Bas
+- Ted
+- Mike Weilgart
+
+Historical Reference:
+- [[https://tracker.mender.io/browse/CFE-2156][Augments pre-parsing]] was introduced as a bug fix in =3.7.3=
+- Some issues with class definition were found and is resolved in =3.7.x=. Fixes
+  included in =3.9.0b1=.
+
+** Policy testing
+:PROPERTIES:
+:ID:       8787485a-f7aa-4711-9d59-f6afb752a911
+:END:
+Proposed by: Neil
+
+   - Nick
+     - Knows of people using ] for verifying CFEngine policy is working as
+       expected.
+
+*** [[https://github.com/sstephenson/bats][BATS]]
+:PROPERTIES:
+:ID:       cdeece29-6ef7-4604-9fee-7e942d5b25cd
+:END:
+
+Is being used by Aleksey to test new policy releases do the expected thing on
+provisioned VMS.
+
+- Support exists in Test Kitchen via [[https://github.com/test-kitchen/busser-bats][busser-bats]]
+
+** CFEngine and Network devices
+:PROPERTIES:
+:ID:       0b9a2442-9285-43b5-b61d-4d102618871d
+:END:
+Proposed by: Mike
+
+** Policy hash map (for improved update behavior)
+:PROPERTIES:
+:ID:       e2a5f461-56f7-4448-9f7e-96a48a625d6f
+:END:
+Proposed by: Mike, Neil

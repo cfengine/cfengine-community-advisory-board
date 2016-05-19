@@ -1,0 +1,65 @@
+* February 25th, 2016
+:PROPERTIES:
+:ID:       fdc09a41-953b-4750-ba51-81da18203dc3
+:END:
+:LOGBOOK:
+CLOCK: [2016-05-19 Thu 09:56]
+:END:
+
+** Attendees
+:PROPERTIES:
+:ID:       3456106b-6e13-4f04-b0b5-4df151268ce6
+:END:
+- [X] Nick Anderson
+- [ ] Eystein Stenberg
+- [X] Ted Zlatanov
+- [ ] Mike Svoboda
+- [ ] Neil Watson
+- [X] Bas van der Vlies
+- [ ] Jonathan Clarke
+
+** Discussion
+
+Currently proposed topics:
+
+- [X] Multiple Augments pre-parsing
+- [X] Explicit iteration proposal
+- Looking at other community initiatives
+- Closures and functions to revamp map functions
+- Back-porting macros for 3.6.x
+- Policy Testing
+- CFEngine and Network Devices
+- Policy hash map
+- Documentation reviews
+
+The meeting ended somewhat early as we had low turn out.
+
+***  [[jira:CFE-2084]] Multiple Augments
+:PROPERTIES:
+:ID:       833db0ff-538a-42bc-a83a-861d4914282d
+:END:
+
+- Bas
+  - Fine with it if he can specify the order of the augments files and that the
+    last one should win.
+  - Will review further and comment on ticket.
+
+*** [[jira:CFE-2378]] Explicit iteration
+:PROPERTIES:
+:ID:       c73da4b8-3ebf-426c-86c1-13f9646c975a
+:END:
+
+The proposal is to add an attribute that allows you to specify the variable that
+is used for iteration. Any =$(this)= in the promise gets iterated. Perhaps
+=$(this.k)= and =$(this.v)= to support arrays.
+
+The main benefits of this proposal are:
+- Avoids necessity of creating intermediate variables
+  - This can make policy harder to read as the intermediate variables can
+    obfuscate the intention.
+  - This can help with avoiding the duplication of data un-necessarily.
+  - Classic arrays are more expensive internally than data containers since each
+    key value pair is its own variable.
+    - Perhaps use of this pattern will result in more efficient agent runs.
+    - This needs to be better clarified by a developer in the ticket.
+
