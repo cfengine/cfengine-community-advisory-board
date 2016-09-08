@@ -23,7 +23,6 @@ or any outdated information.
 Raised by Florian Hagel
 - https://wiki.onosproject.org/display/ONOSST/Community+Steering+Team
 - Thinks that we need some public goals for interaction with community
-
 ** Closures and functions to revamp map functions
 :PROPERTIES:
 :ID:       5b9100b0-47ce-49ab-ac55-1cd5d68f58c7
@@ -34,6 +33,13 @@ Raised by Ted
 Typically you'd deal with this with a closure, e.g. map(canonify(key()), mylist)
 where `key()` gives you the key of the current iteration without a variable
 interpolation
+** Full IPV6 Support
+:PROPERTIES:
+:ID:       d8fd6a71-b00f-4789-81ea-b2467ffeca52
+:END:
+
+- Raised by Neil.
+- IPV6 is becoming increasingly prevalent.
 
 * Open Topics (for further discussion)
 :PROPERTIES:
@@ -92,6 +98,21 @@ Is being used by Aleksey to test new policy releases do the expected thing on
 provisioned VMS.
 
 - Support exists in Test Kitchen via [[https://github.com/test-kitchen/busser-bats][busser-bats]]
+
+*** jUnit
+:PROPERTIES:
+:ID:       bb396ad9-0ffb-4951-8920-eac705b0d6a9
+:END:
+
+Ted has submitted a [[https://github.com/cfengine/masterfiles/pull/766/files][pull request]] to add some bundles to produce jUnit output.
+
+
+*** TAP
+:PROPERTIES:
+:ID:       d0c66c26-a9f2-4ed0-8b03-79cf7d717041
+:END:
+
+Marco published [[https://github.com/brontolinux/cfengine-tap/][cfengine-tap library]].
 
 ** CFEngine and Network devices
 :PROPERTIES:

@@ -1,0 +1,257 @@
+* August 25th, 2016
+:PROPERTIES:
+:ID:       0cc4a5db-4190-459a-ace8-c61f2590f4af
+:END:
+** Attendees
+:PROPERTIES:
+:ID:       9642b0ac-ba74-41f5-8d0b-2d988103c7ee
+:END:
+
+ - [X] Nick Anderson
+ - [X] Mike Svoboda
+ - [X] Neil Watson
+ - [X] Ted Zlatanov
+
+** Topic Suggestions
+:PROPERTIES:
+:ID:       7d559d3c-2c8a-44ac-9741-79e8de0b64ca
+:END:
+
+- Early =3.7.5= release with connection cache fix? [[jira:CFE-2447]]
+- Automergeing environemtns and splayclass
+- Functions as promisers
+- Jinja templates
+- Meet again in 2 weeks?
+
+** Discussion 1 (2016-08-25)
+SCHEDULED: 2016-08-25
+:PROPERTIES:
+:ID:       b88867bf-421a-492f-9c78-00707028d2df
+:END:
+*** Jinja Templates
+:PROPERTIES:
+:ID:       fd4e6854-8fbb-4369-862d-8eb6dcc58ef3
+:END:
+
+Jonathan asked if there was any interest in Jinja2 =template_method=.
+Generally supported by other attendees, and mention that erb might also be a
+good template candidate.
+
+https://github.com/jroweboy/jinja2-c
+
+- *Product Management has no objections*
+- Normation to work on PR
+
+*** Feature for automerging support with cf-serverd and splayclass
+:PROPERTIES:
+:ID:       50743ea9-ddad-4686-88ad-39ca5132e6a7
+:END:
+
+Mike suggested a potential feature for =cf-serverd= supporting automerging
+with =select_class=.
+
+The discussion is here:
+
+#+BEGIN_VERBATIM
+  [09:57] < svoboda> currently, we maintain like 12 different cfengine environments
+  [09:57] < svoboda> between prod / corp / staging / qa / etc
+  [09:57] < svoboda> when we commit to master
+  [09:57] < svoboda> in git
+  [09:57] < svoboda> we wrote something called the automerger
+  [09:58] < svoboda> each environment has its own git branch
+  [09:58] < svoboda> the automerger slowly merges from master down the branch line
+  [09:58] < svoboda> from least critical to most critical
+  [09:58] < svoboda> it gives us a 'fire and forget'
+  [09:58] < svoboda> but the change doesn't active everywhere
+  [09:59] < svoboda> if we push a bad change, maybe it takes the qa and corp environments down
+  [09:59] < svoboda> but we can stop the automerger before it promotes to prod
+  [09:59] < svoboda> its kind of a ramping feature without touching policy code
+  [09:59] < svoboda> i.e. after an hour or two, its everywhere
+  [10:00] < svoboda> but so what cfengine could do
+  [10:00] < svoboda> well, this is a common request with automation too...
+  [10:00] < svoboda> "how do i push a change so its not everywhere at once"
+  [10:00] < svoboda> there's already the code for select_class
+  [10:01] < svoboda> that divides a large chunk into small chunks
+  [10:01] < svoboda> so lets say we had a select_class statement in cf-serverd
+  [10:01] < svoboda> over 100 choices
+  [10:01] < svoboda> cf-serverd realizes it has 100 clients
+  [10:02] < svoboda> so, pass 1, it activates select_class bucket 1
+  [10:02] < svoboda> which has 1 client
+  [10:02] < svoboda> so that 1 client gets new files
+  [10:02] < svoboda> the other 99 clients dont
+  [10:02] < svoboda> somehow use select class logic to promote file changes from cf-serverd
+  [10:02] < svoboda> or maybe thats handled on the client pulling policies, i dunno
+  [10:02] < svoboda> but it would be a way for administrators to write policies, such that everything gets a ramp
+  [10:03] < svoboda> even if its not specifically stated in the policy
+  [10:03] < svoboda>  in our infrastructure, if shit is on fire
+  [10:03] < svoboda> we can just immediately merge all branches from master and update everything at once
+  [10:03] < svoboda> so having the "stop slow ramp" feature is useful too
+  [10:03] < svoboda> just wondering if it could be implemented with select_class instead of git branches
+#+END_VERBATIM
+
+Not clear how cf-serverd would manage which clients got in which buckets. If
+handled by serverd it would kind of go against the autonomy of the agent. Could
+be handled agent side, but this doesnt seem clear enough for a core feature.
+Currently doing this in the VCS seems to be the best way.
+
+*** Functions as promisers
+CLOSED: [2016-08-25 Thu 15:40]
+:PROPERTIES:
+:ID:       7afcea11-7ac1-4f78-bfbc-2a04b4b22d60
+:END:
+
+#+BEGIN_VERBATIM
+[10:17] < TedZ>     reports: format("my list contents are %S", mylist);
+[10:17] < jooooooon> is format a "special function" (as in in C code) or can/could it be a bundle?
+[10:17] < jooooooon> ok, I know format is a special function, I mean does this only apply to functions :)
+[10:18] < svoboda> tedz: so this basically would just short circuit creating a var to pass into a promise, right?
+[10:18] < TedZ> jooooooon: all functions returning a string: canonify in class names for instance
+[10:18] < TedZ> svoboda: right, in some cases that's not reliable anyway due to ordering
+[10:18] < nickanderson> https://github.com/cfengine/core/pull/2295
+[10:18] < TedZ> jooooooon: e.g. classes: canonify(mystring) expression => "any";
+[10:19] < jooooooon> nice
+[10:19] < neilhwatson> makes sense. Hoop jumping through vars and classes is trying.
+[10:19] < svoboda> +1, that would be a great change
+[10:19] < nickanderson> https://tracker.mender.io/browse/CFE-1092
+[10:36] < jooooooon> I'm definitely for it. I am concerned about readbility in vars/classes, but am happy for that to be possible, just
+                     not suggested in docs, and let users shoot themselves in the foot if they so desire.
+[10:37] < neilhwatson> ++ readability is just a matter of style
+[10:39] < nickanderson> so neilhwatson you like the function as promiser proposal?
+[10:39] < neilhwatson> yes
+
+
+[10:40] < nickanderson> i will reach out to the rest of the list and review the discussion in
+                        https://groups.google.com/d/msg/dev-cfengine/kDt0tAAcUis/VCbdhqBj4HcJ
+#+END_VERBATIM
+
+**** DONE Review functions as promisers discussion and reach out to users for feedback
+:PROPERTIES:
+:ID:       04885982-ddd7-4ae5-b8db-15e6ddb8f625
+:END:
+
+In an attempt to minimize the number of intermediary variables that get created
+when transforming strings Ted [[https://groups.google.com/forum/#!msg/dev-cfengine/kDt0tAAcUis/VCbdhqBj4HcJ][originally proposed]] special string escapes.
+
+- =$(~var)= to canonify a variable
+- =$(\var)= to escape a variable
+- =$((3+2))= to do math inline bash-style, formatting as integer if the result
+  is close enough to an integer
+
+#+BEGIN_SRC cfengine3
+  bundle agent main
+  {
+    vars:
+      "var1" string => "value needs transformed";
+
+      "$(~var1)" string => "$(var1)"; # Would define value_needs_transformed with
+                                      # the value of var1
+
+    reports:
+      "$(~var1)"; # Should report 'value_needs_transformed'
+      "$((3+2))"; # Should report '5'
+      "$(\var1)"; # Should report 'value\ needs\ transformed'
+  }
+#+END_SRC
+
+Alternatively:
+
+- =$(:escape:var)= or =$(escape(var))=, to escape a variable.
+- =$(:canonify:var)= =$(canonify(var))= to canonify a variable.
+- =$(:eval:2+2)= or =$(eval(2+2))= to do math inline.
+
+These alternates were considered easier to read however generally the special
+string escapes were disliked by the core developers who support better function
+nesting and the use of a function as a promiser.
+
+[[jira:CFE-1092]] is open to track the use of functions for any string in the
+CFEngine policy, and a [[https://github.com/cfengine/core/pull/2295][pull request]] is currently open to allow functions to be
+used as promisers.
+
+#+BEGIN_SRC cfengine3
+  bundle agent example
+  {
+      vars:
+        "iter" slist => { "1", "2", "3" };
+
+        # This promise should define 'promiser_addition' as an empty string.
+        canonify(concat("promiser ", canonify("addition"))) string => "";
+
+        # This promise should define 'clean' as an empty string.
+        canonify("clean") string => "";
+
+        # This promise should define 'my_name_is_canonified' as an empty string.
+        canonify("my name is canonified") string => "";
+
+        # This promise should define 'iter_canon_1' with the string value 'iter =
+        # 1', 'iter_canon_2' with the string value 'iter = 2', and 'iter_canon_3'
+        # with the string value 'iter = 3'
+        concat("iter_canon_", canonify($(iter))) string => "iter = $(iter)";
+  }
+#+END_SRC
+
+Some discussion has taken place in [[jira:CFE-1092]] regarding the use of functions
+for any string in the CFEngine policy but no decision or concensus has been
+reached. There are some objections to readability as well as the specific
+implementation details.
+
+The community advisory board discussed the basic feature of being able to use
+functions as promisers. Mike Svoboda, Neil Watson, Jonathan Clarke, and Ted
+Zlatanov support the feature. Nick Anderson is on the fence primarily concerned
+with readability. Eystein Stenberg and Bas van der Vlies were not in attendance.
+
+Especially because of the mixed support and because the feature is a large
+language change we would like additional user feedback in [[jira:CFE1092]]. If you
+support the change please add yourself as a watcher and vote for the issue. More
+commentary in the ticket describing the reason for your support or opposition is
+also welcome.
+
+*** DONE Request feedback from users
+:PROPERTIES:
+:ID:       741d3083-2186-4640-87a5-8f86f98d7df1
+:END:
+
+https://groups.google.com/forum/#!topic/dev-cfengine/2T4V4qA6v5k
+https://groups.google.com/forum/#!topic/help-cfengine/086VgrX9xdk
+*** Meeting in 2 weeks
+:PROPERTIES:
+:ID:       137bdc11-fbb9-463f-b906-cbe43acfe7df
+:END:
+
+Yes, since we had mixed signals with scheduling we decided to have a meeting at
+the same time in 2 weeks.
+
+** Discussion 2 (2016-09-07)
+:PROPERTIES:
+:ID:       331f9cc2-c2b2-4ccb-838f-56d71a9eea18
+:END:
+- [X] Ted
+- [X] Neil
+- [X] Eystein
+- [X] Nick
+
+*** Altering the release schedule for "critical" issues
+:PROPERTIES:
+:ID:       086218e7-48cb-488e-be9d-f7e22e34b5f7
+:END:
+
+We can release out of schedule, but in order to do so the issue must be
+*Critical*.
+
+- A serious security vulnerability.
+- A bug that makes the product unusable and there is no work around available.
+  - Is a workaround that reduces the frequency of agent runs acceptable as a
+    workaround? (e.g. a bug causing 4x times connections to =cf-serverd= could
+    be potentially mitigated by reducing the frequency of client update)
+
+*** Functions as promisers
+:PROPERTIES:
+:ID:       146a4c88-e55b-4a57-b739-67b57cfeebd5
+:END:
+
+Eystein's first reaction is that it makes sense in strings (e.g. =reports:=
+and =vars:=)
+ - Would expect it to error if you tried to use a function in place of a body
+   name.
+ - Attributes that take a bundle or body should *not* be allowed to be
+   replaced with a function.
+ - Potential future extension could cover *all non-menu strings*
