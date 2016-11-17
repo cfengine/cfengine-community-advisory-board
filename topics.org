@@ -119,7 +119,7 @@ Marco published [[https://github.com/brontolinux/cfengine-tap/][cfengine-tap lib
 :END:
 Proposed by: Mike
 
-** Policy hash map (for improved update behavior)
+** Policy hash map (for improved update behavior) [[jira:1903]]
 :PROPERTIES:
 :ID:       e2a5f461-56f7-4448-9f7e-96a48a625d6f
 :END:
