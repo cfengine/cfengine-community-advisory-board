@@ -1,5 +1,8 @@
 
 * November 17th, 2016
+:PROPERTIES:
+:ID:       dcbc6dd6-ff08-4438-bc5a-a48da835c5ab
+:END:
 
 *Attendees:*
 
@@ -9,6 +12,7 @@
  - [X] Eystein
  - [X] Jimis
  - [X] Bas
+ - [X] Neil
  - [ ] Jonathan
 
 *** 3.10.0b1
@@ -158,4 +162,3 @@ bundle agent main
       string => "$(mylist)";
 }
 #+END_SRC
-
