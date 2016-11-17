@@ -33,14 +33,6 @@ Raised by Ted
 Typically you'd deal with this with a closure, e.g. map(canonify(key()), mylist)
 where `key()` gives you the key of the current iteration without a variable
 interpolation
-** Full IPV6 Support
-:PROPERTIES:
-:ID:       d8fd6a71-b00f-4789-81ea-b2467ffeca52
-:END:
-
-- Raised by Neil.
-- IPV6 is becoming increasingly prevalent.
-
 * Open Topics (for further discussion)
 :PROPERTIES:
 :ID:       b37f5fd3-6da4-43d3-bb53-4fa9f8977b38
@@ -48,6 +40,13 @@ interpolation
 
 These are topics that have been discussed, but may have additional
 discussion remaining.
+
+** IPV6 Support [[jira:CFE-1520]]
+:PROPERTIES:
+:ID:       d8fd6a71-b00f-4789-81ea-b2467ffeca52
+:END:
+
+- IPV6 is becoming increasingly prevalent.
 
 ** [[jira:CFE-2378]] Explicit iteration proposal
 :PROPERTIES:
@@ -125,3 +124,21 @@ Proposed by: Mike
 :ID:       e2a5f461-56f7-4448-9f7e-96a48a625d6f
 :END:
 Proposed by: Mike, Neil
+
+** New Core (cfe4)
+:PROPERTIES:
+:ID:       4165530c-f538-4d7f-bd6c-1207dfe52043
+:END:
+
+Raised by ted
+** Design Center revival/rewrite
+:PROPERTIES:
+:ID:       a6d0e831-d94d-49d1-a604-72978000d314
+:END:
+Raised by Ted
+
+#+BEGIN_QUOTE
+[10:22] < basv> I have proposal every configmannagement tool has some standard, like recipies, you name it. With the aid of shortcut in
+                cf-serverd we could standarize data, templates, json, etc and writte bundles that use this shortcuts. So we setup some
+                kind of repository. Just a wild idea
+#+END_QUOTE
