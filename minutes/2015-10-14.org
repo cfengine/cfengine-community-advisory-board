@@ -1,6 +1,12 @@
 * October 14th, 2015
+:PROPERTIES:
+:ID:       e3056803-e875-4c5d-b5b8-1cb7e7cf0c84
+:END:
 
 ** Attendees
+:PROPERTIES:
+:ID:       061c169e-e683-45b4-9bd8-c3fce435fa30
+:END:
 
 - [X] Nick Anderson
 - [X] Eystein Stenberg
@@ -11,8 +17,14 @@
 - [ ] Jonathan Clarke
 
 ** Discussion
+:PROPERTIES:
+:ID:       cec5a6bc-4476-4cdb-a48a-e8be26e33acf
+:END:
 
 *** Accomplishments
+:PROPERTIES:
+:ID:       5d9ea7fe-c84a-4225-87d5-4a2e688657fa
+:END:
     Neil had asked what the community advisory board has accomplished.
 
     The primary accomplishment of the board has been sustained open
@@ -30,7 +42,13 @@
 
 
 *** Important Issues
+:PROPERTIES:
+:ID:       6bb04837-383b-4893-8a83-3a1ae6087571
+:END:
 **** [[https://dev.cfengine.com/issues/7615][def.json/augments file from C]]
+:PROPERTIES:
+:ID:       84fadaa0-d93f-4970-8bb8-38971beefd3d
+:END:
 
      Familiarity with proposal:
      - Mike somewhat unfamiliar.
@@ -89,15 +107,24 @@
      ticket. See [[https://dev.cfengine.com/issues/7615][Redmine #7615]] for more details.
 
 **** Moving language concepts guide to reference section of documentation
+:PROPERTIES:
+:ID:       a49032c5-ffc9-4d44-b5b1-e77e1e0f28e0
+:END:
      Aleksey suggested the move, it makes sense to everyone.
      - Nick to do the work
-     
+
 ***** TODO Move language concepts guide to reference section of documentation [3/3]
+:PROPERTIES:
+:ID:       ac75b247-cb7e-430c-b586-32aae2eb2c1f
+:END:
       - [X] [[https://github.com/cfengine/documentation/pull/1189][Moved in master]] 2015-10-19
       - [X] Redirect [[https://docs.cfengine.com/docs/master/guide-language-concepts.html][docs/master/guide-language-concepts]] to [[https://docs.cfengine.com/docs/master/reference-language-concepts.html][docs/master/reference-language-concepts]] 2015-10-20
       - [X] When 3.8 is released redirect latest/guide-language-concepts to latest/reference-language-concepts
 
 *** Meeting should move to video conference or phone call
+:PROPERTIES:
+:ID:       21845641-35a7-4f79-adfd-defd2301be7a
+:END:
     Mike suggested that the meeting may go faster if moved to
     video/phone. Widely agreed upon. Specifics to be worked out later.
 
@@ -108,6 +135,9 @@
       denominator.
 
 *** Policy Testing
+:PROPERTIES:
+:ID:       6ead120c-a18a-492c-ad0f-490f7d9abc2b
+:END:
     Raised by Neil.
 
     Would like to promote ways to test cfengine policy and ways to
@@ -140,6 +170,9 @@
       - https://github.com/nmische/kitchen-cfengine/
 
 *** Goals that can be accomplished without CFEngine the company
+:PROPERTIES:
+:ID:       5eced97a-a39f-4210-ab1d-48bf627f58db
+:END:
     Raised by Neil.  The board should focus on goals that can be
     achieved without having to rely on the company as goals and
     priorities frequently differ.
@@ -149,6 +182,9 @@
     next batch of CFEngine Community Champions.
 
 *** Champion Selection
+:PROPERTIES:
+:ID:       e9e58c25-2d81-4739-b6ad-c02c2a4f47ab
+:END:
     - One candidate identified by board
     - Pool of candidates identified by board
     - Nick to send out community form for wider input
@@ -159,12 +195,18 @@
 
     - Current champion page lists past champions, suggested to change to single page
       - Nick to do the work
-      
+
 **** TODO Champion Selection [2/2]
+:PROPERTIES:
+:ID:       4597e9a4-71ca-4a93-9565-7c9588a1ae8b
+:END:
      - [X] Nick to see about resurrecting champion info for previous [[champions][https://cfengine.com/engage/cfengine-champions/]]
      - [X] Nick to send out nomination forms for [[https://goo.gl/gpdWbA][2015 CFEngine Community Champion Nomination]]
-     
+
 *** Networking Industry moving towards full blown linux distros for switching and routing
+:PROPERTIES:
+:ID:       3dadbfd8-0721-498f-9484-3c3a2ac49867
+:END:
     Raised by Mike
 
     - Lack of packages for switching and routing platforms hampers
